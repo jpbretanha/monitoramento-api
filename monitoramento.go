@@ -13,7 +13,7 @@ import (
 )
 
 const monitoramentos = 2
-const delay = 5
+const delay = 3
 
 func main() {
 
@@ -64,9 +64,9 @@ func iniciarMonitoramento() {
 
 	sites := leSitesDoArquivo()
 	for i := 0; i < monitoramentos; i++ {
-
+		fmt.Println("Rodada", i+1, "de monitoramento!")
 		for i, site := range sites {
-			fmt.Println("Testando site", i, ":", site)
+			fmt.Println("Testando site", i+1, ":", site)
 			testaSite(site)
 			fmt.Println("")
 		}
@@ -104,7 +104,7 @@ func leSitesDoArquivo() []string {
 		linha, error := leitor.ReadString('\n')
 		linha = strings.TrimSpace(linha)
 		sites = append(sites, linha)
-		fmt.Println(linha)
+		// fmt.Println(linha)
 		if error == io.EOF {
 			break
 		}

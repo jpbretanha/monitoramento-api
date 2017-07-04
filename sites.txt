@@ -1,2 +1,3 @@
 http://crm2.mariachi.com.br
 http://crm3.mariachi.com.br
+http://tools.mariachi.com.br
