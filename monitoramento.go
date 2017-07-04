@@ -58,10 +58,6 @@ func exibeMenu() {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
-
-	// sites := []string{"https://random-status-code.herokuapp.com"}
-	// sites = append(sites, "https://alura.com.br")
-
 	sites := leSitesDoArquivo()
 	for i := 0; i < monitoramentos; i++ {
 		fmt.Println("Rodada", i+1, "de monitoramento!")
@@ -104,7 +100,6 @@ func leSitesDoArquivo() []string {
 		linha, error := leitor.ReadString('\n')
 		linha = strings.TrimSpace(linha)
 		sites = append(sites, linha)
-		// fmt.Println(linha)
 		if error == io.EOF {
 			break
 		}
